@@ -3,6 +3,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const _ = require("lodash");
+const serverless = require("serverless-http");
 
 const app = express();
 
@@ -129,3 +130,6 @@ app.get("/about", (req, res) => {
 app.listen(3000, () => {
   console.log("Server started on port 3000");
 });
+
+app.use('/.netlify/functions/app',app);
+module.exports.handler = serverless(app);
