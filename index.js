@@ -1,6 +1,6 @@
 //jshint esversion:6
 
-require('dotenv').config();
+
 const express = require("express");
 const mongoose = require("mongoose");
 const _ = require("lodash");
